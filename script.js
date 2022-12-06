@@ -7,9 +7,10 @@ var setPressure = document.getElementById('pressure')
 var setWind = document.getElementById('wind')
 var setCity = document.getElementById('city')
 var setCountry = document.getElementById('country')
+var setCon = document.getElementById('con')
+var body = document.querySelector('body')
 
 dateFunction();
-getData();
 
 searchBtn.addEventListener( 'click', function(e){
     e.preventDefault()
@@ -42,19 +43,29 @@ function getData(){
             sunset,
           };
 
-          setTemp.innerHTML = newWeatherInfo.temp;
-          setSunset.innerHTML = newWeatherInfo.sunset;
+          let sec = newWeatherInfo.sunset;
+          let date = new Date(sec * 1000);
+          let timeStr = `${date.getHours()}:${date.getMinutes()}`;
+
+          setTemp.innerHTML = newWeatherInfo.temp+"&#176;";
+          setSunset.innerHTML = timeStr;
           setHumidity.innerHTML = newWeatherInfo.humidity;
           setPressure.innerHTML = newWeatherInfo.pressure;
           setWind.innerHTML = newWeatherInfo.speed;
           setCity.innerHTML = newWeatherInfo.name+",";
           setCountry.innerHTML = newWeatherInfo.country;
-
-
-        //   return newWeatherInfo;
+          setCon.innerHTML = newWeatherInfo.weatherhood;
+          
+      if (newWeatherInfo.temp <= 5) {
+          body.style.backgroundImage= 'url("images/Snow.jpg")';
+        }else if(newWeatherInfo.temp >= 6 & newWeatherInfo.temp <= 28) {
+          body.style.backgroundImage= 'url("images/Haze.jpg")';
+        }else if(newWeatherInfo.temp >= 29 & newWeatherInfo.temp <= 40) {
+          body.style.backgroundImage= 'url("images/Clear.jpg")';
+        }else{
+          body.style.backgroundImage= 'url("images/Cloud.jpg")';
+        }
         });
-        
-
 }
 
 //===[ Set Date Funtion ]===
@@ -63,3 +74,5 @@ function dateFunction() {
     var setDateTime=document.getElementById('date');
     setDateTime.innerHTML=dateTime
 }
+
+
