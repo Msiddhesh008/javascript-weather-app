@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="search">
+          <input  type="text" placeholder="Search..." value="Mumbai"/>
+          <button class="hero-btn" >Search</button>
+        </div>
+  
+        <article>
+          <div class="icon-cnt">
+            <i class="wi wi-day-cloudy"></i>
+          </div>
+  
+          <div class="temp-cnt">
+            <div class="temp">
+              <span class="deg"> 25&deg;</span>
+              <span class="con">
+                <span id="con">CLOUDS</span>
+                <p id="city">
+                  Pune, 
+                </p><p id="country">IN</p>
+              </span>
+            </div>
+  
+          <div class="date" id="date"></div>  <!--  new Date().toLocaleString() -->
+          </div>
+  
+          <div class="last-cnt">
+            <div class="last-cnt-1">
+              <i class="wi wi-sunset"></i>
+              <span><p id="sunset">18:00</p>
+                <p>Sunset</p>
+              </span>
+            </div>
+  
+            <div class="last-cnt-1">
+              <i class="wi wi-humidity"></i>
+              <span>
+                <p>Humidity</p><p id="humidity">98</p>
+              </span>
+            </div>
+  
+            <div class="last-cnt-1">
+              <i class="wi wi-hail" ></i>
+              <span>
+                <p>Pressure</p><p id="pressure">1184</p>
+              </span>
+            </div>
+  
+            <div class="last-cnt-1">
+              <i class="wi wi-strong-wind" ></i>
+              <span><p>Wind</p>
+                <p id="wind">2002</p>
+              </span>
+            </div>
+          </div>
+        </article>
+        <p class="watermark">M Siddhesh</p>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+</html>
